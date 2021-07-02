@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf_converter_char.c                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kycho <kycho@student.42seoul.kr>           +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/16 02:05:43 by kycho             #+#    #+#             */
-/*   Updated: 2020/04/10 21:08:02 by kycho            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ft_printf.h"
 
 static void		adjust_flag(t_printf_flag *f)
@@ -30,7 +18,8 @@ static int		set_res(t_printf_flag *f, t_printf_res *r, va_list ap)
 	else
 		ft_memset(r->res, ' ', r->res_len);
 	idx = (f->minus) ? 0 : r->res_len - 1;
-	r->res[idx] = va_arg(ap, int);
+	if (va_arg(ap,int) != 0)
+		r->res[idx] = va_arg(ap, int);
 	return (SUCCESS);
 }
 
