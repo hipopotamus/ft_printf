@@ -11,6 +11,8 @@ int init_ft_printf(const char **format, int *total_written,
 	condition->fd = FT_PRINTF_FD;
 	condition->line = (char*)malloc(sizeof(char) * 1);
 	ft_memset(condition->line, 0, 1);
+	condition->line_idx = 0;
+	condition->line_len = 0;
 	return (SUCCESS);
 }
 

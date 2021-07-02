@@ -58,8 +58,7 @@ int		ft_printf_conversion_handler(
 	if (converter(condition->ap, &flag, &result) == ERROR)
 		return (ERROR);
 	//write(condition->fd, result.res, result.res_len);
-	ft_extend_line(&(condition->line), result.res, 
-			ft_strlen(condition->line) + result.res_len);
+	ft_printf_getbuffer(condition, result.res, result.res_len);
 	condition->format += get_conversion_len(condition->format, specifier);
 	free(result.res);
 	return (result.res_len);

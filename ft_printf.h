@@ -16,6 +16,8 @@ typedef struct	s_printf_condition
 	va_list		ap;
 	int			fd;
 	char		*line;
+	size_t		line_idx;
+	size_t		line_len;
 }				t_printf_condition;
 
 typedef struct	s_printf_flag
@@ -69,5 +71,6 @@ int				ft_printf_converter_hex
 							(va_list ap, t_printf_flag *f, t_printf_res *r);
 int				ft_printf_converter_percent
 							(va_list ap, t_printf_flag *f, t_printf_res *r);
-
+void			*ft_printf_getbuffer(t_printf_condition *condition, 
+				const char *word, size_t word_len);
 #endif

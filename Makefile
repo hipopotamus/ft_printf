@@ -15,6 +15,7 @@ SRCS = ./ft_printf.c \
        ./ft_printf_converter_unsigned_int.c \
        ./ft_printf_converter_hex.c \
        ./ft_printf_converter_percent.c \
+	   ./ft_printf_getbuffer.c \
 
 OBJS = $(SRCS:.c=.o)
 
