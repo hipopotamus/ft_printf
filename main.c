@@ -2,6 +2,6 @@
 
 int main()
 {
-	ft_printf("%4.5d", 1234);
+	ft_printf("%.s", "abcdef");
 
 }
