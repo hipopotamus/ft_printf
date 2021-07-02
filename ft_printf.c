@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include <stdio.h>
 
 int init_ft_printf(const char **format, int *total_written,
 		t_printf_condition *condition, char **specifiers)
@@ -31,13 +32,16 @@ int	ft_printf(const char *format, ...)
 		if (*condition.format == FT_PRINTF_TARGET)
 			written = ft_printf_conversion_handler(&condition, specifiers);
 		else
+		{
 			written = ft_printf_putchar(&condition);
+			//write(1, condition., condition.line_len);
+		}
 		if (written == ERROR)
 			return (ERROR);
 		total_written += written;
 	}
 	va_end(condition.ap);
-	write(1, condition.line, ft_strlen(condition.line));
+	write(1, condition.line, condition.line_len);
 	free(condition.line);
 	return (total_written);
 }

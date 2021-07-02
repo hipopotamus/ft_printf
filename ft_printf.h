@@ -71,6 +71,6 @@ int				ft_printf_converter_hex
 							(va_list ap, t_printf_flag *f, t_printf_res *r);
 int				ft_printf_converter_percent
 							(va_list ap, t_printf_flag *f, t_printf_res *r);
-void			*ft_printf_getbuffer(t_printf_condition *condition, 
+int				ft_printf_getbuffer(t_printf_condition *condition, 
 				const char *word, size_t word_len);
 #endif
