@@ -10,8 +10,8 @@ void *ft_extend_line(char **line, const char *word)
 	if(!(*line = malloc(sizeof(char) * total_len)))
 		return (NULL);
 	ft_memset(*line, 0, total_len);
-	ft_memcpy(*line, line_temp, ft_strlen(line_temp));
-	ft_strlcat(*line, word, total_len);
+	ft_strlcpy(*line, line_temp, ft_strlen(line_temp) + 1);
+	ft_strlcat(*line, word, total_len + 1);
 	free(line_temp);
 	return (*line);
 }
