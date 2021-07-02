@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void *ft_extend_line(char **line, const char *word)
+void *ft_extend_line(char **line, const char *word, size_t word_len)
 {
 	size_t total_len;
 	char *line_temp;
@@ -11,7 +11,7 @@ void *ft_extend_line(char **line, const char *word)
 		return (NULL);
 	ft_memset(*line, 0, total_len);
 	ft_strlcpy(*line, line_temp, ft_strlen(line_temp) + 1);
-	ft_strlcat(*line, word, total_len + 1);
+	ft_strlcat(*line, word, word_len + 1);
 	free(line_temp);
 	return (*line);
 }

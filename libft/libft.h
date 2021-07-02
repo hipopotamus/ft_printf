@@ -82,5 +82,6 @@ char				*ft_uitoa_base(unsigned int n, const char *base);
 char				*ft_ultoa_base(unsigned long n, const char *base);
 size_t				ft_sizet_max(size_t x, size_t y);
 size_t				ft_sizet_min(size_t x, size_t y);
-void				*ft_extend_line(char **line, const char *word);
+void				*ft_extend_line(char **line, const char *word, 
+					size_t word_len);
 #endif
