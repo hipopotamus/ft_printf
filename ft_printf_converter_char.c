@@ -18,8 +18,7 @@ static int		set_res(t_printf_flag *f, t_printf_res *r, va_list ap)
 	else
 		ft_memset(r->res, ' ', r->res_len);
 	idx = (f->minus) ? 0 : r->res_len - 1;
-	if (va_arg(ap,int) != 0)
-		r->res[idx] = va_arg(ap, int);
+	r->res[idx] = va_arg(ap, int);
 	return (SUCCESS);
 }
 
