@@ -17,8 +17,8 @@ int	ft_printf_putchar(t_printf_condition *condition)
 	//ft_putchar_fd(*(condition->format), condition->fd);
 	char word_temp[2];
 
-	word_temp[1] = *(condition->format);
-	word_temp[2] = '\0';
+	word_temp[0] = *(condition->format);
+	word_temp[1] = '\0';
 	ft_extend_line(&(condition->line), word_temp);
 	condition->format++;
 	return (1);
