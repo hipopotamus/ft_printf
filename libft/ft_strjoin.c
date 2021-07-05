@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:52:50 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/05/08 20:53:39 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 22:00:52 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	size = len_s1 + len_s2;
-	ptr = (char*)ft_calloc((size + 1), sizeof(char));
+	ptr = (char *)ft_calloc((size + 1), sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
 	ft_strlcpy(ptr, s1, len_s1 + 1);

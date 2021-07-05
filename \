@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:42:59 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 20:46:43 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 20:45:44 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,25 +61,25 @@ typedef int		(*t_converter)(va_list, t_printf_flag *, t_printf_res *);
 int				ft_printf(const char *format, ...);
 int				ft_printf_putchar(t_printf_condition *condition);
 int				ft_printf_conversion_handler(t_printf_condition *condition,
-					char *specifiers);
-char			ft_printf_get_specifier(const char *format,
-					const char *specifiers);
+											char *specifiers);
+char			ft_printf_get_specifier(const char *format, 
+				const char *specifiers);
 int				ft_printf_set_flag(t_printf_flag *f, t_printf_condition *c,
-					char specifier);
+				char specifier);
 int				ft_printf_converter_char(va_list ap, t_printf_flag *f,
-					t_printf_res *r);
+				t_printf_res *r);
 int				ft_printf_converter_string(va_list ap, t_printf_flag *f,
-					t_printf_res *r);
+				t_printf_res *r);
 int				ft_printf_converter_pointer(va_list ap, t_printf_flag *f,
-					t_printf_res *r);
+				t_printf_res *r);
 int				ft_printf_converter_int(va_list ap, t_printf_flag *f,
-					t_printf_res *r);
+				t_printf_res *r);
 int				ft_printf_converter_unsigned_int(va_list ap, t_printf_flag *f,
-					t_printf_res *r);
+				t_printf_res *r);
 int				ft_printf_converter_hex(va_list ap, t_printf_flag *f,
-					t_printf_res *r);
+				t_printf_res *r);
 int				ft_printf_converter_percent(va_list ap, t_printf_flag *f,
-					t_printf_res *r);
+				t_printf_res *r);
 int				ft_printf_getbuffer(t_printf_condition *condition,
-					const char *word, size_t word_len);
+				const char *word, size_t word_len);
 #endif

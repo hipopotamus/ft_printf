@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:05:25 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/05/08 20:10:49 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:43:08 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_atoi(const char *str)
 {
 	int	signal;
-	int i;
-	int res;
+	int	i;
+	int	res;
 
 	signal = 1;
 	i = 0;

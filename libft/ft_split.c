@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/08 20:40:32 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/05/08 22:24:04 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:59:38 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static size_t	get_word_num(char const *s, char c)
 	return (cnt);
 }
 
-static int		memerr_free(char **res, size_t n)
+static int	memerr_free(char **res, size_t n)
 {
 	size_t		i;
 
@@ -56,30 +56,30 @@ static int		memerr_free(char **res, size_t n)
 	return (1);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char		**res;
 	size_t		s_i;
 	size_t		r_i;
 	size_t		len_word;
 
-	if (!(res = (char**)malloc(sizeof(char*) * (get_word_num(s, c) + 1))))
+	res = (char **)malloc(sizeof(char *) * (get_word_num(s, c) + 1));
+	if (!res)
 		return (NULL);
-	s_i = 0;
+	s_i = -1;
 	r_i = 0;
-	while (s[s_i])
+	while (s[s_i++])
 	{
 		if (s[s_i] != c)
 		{
 			len_word = get_word_len(&s[s_i], c);
-			res[r_i] = (char*)malloc(sizeof(char) * (len_word) + 1);
+			res[r_i] = (char *)malloc(sizeof(char) * (len_word) + 1);
 			if (res[r_i] == NULL && memerr_free(res, r_i))
 				return (0);
 			ft_strlcpy(res[r_i], &s[s_i], len_word + 1);
 			s_i += len_word - 1;
 			r_i++;
 		}
-		s_i++;
 	}
 	res[r_i] = NULL;
 	return (res);

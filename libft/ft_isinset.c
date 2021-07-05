@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:38:08 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 14:38:17 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:45:10 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isinset(char ch, const char *set)
 {
-	size_t idx;
+	size_t	idx;
 
 	idx = 0;
 	while (set[idx] != '\0')

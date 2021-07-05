@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:45:17 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 14:45:20 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:33:33 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	ft_printf_get_specifier(const char *format, const char *specifiers)
 {
-	size_t idx;
+	size_t	idx;
 
 	idx = 1;
 	while (format[idx])

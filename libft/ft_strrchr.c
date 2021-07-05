@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 21:12:00 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/05/03 21:22:48 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 22:03:35 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t i;
-	size_t len;
+	size_t	i;
+	size_t	len;
 
 	len = ft_strlen(s);
 	i = 0;
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (s[len - i] == (char)c)
 		{
-			return ((char*)s + len - i);
+			return ((char *)s + len - i);
 		}
 		i++;
 	}

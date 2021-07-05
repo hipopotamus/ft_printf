@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:42:11 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 15:07:32 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 20:34:05 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	init_ft_printf(const char **format, int *total_written,
 	*specifiers = FT_PRINTF_SPECIFIERS;
 	condition->format = *format;
 	condition->fd = FT_PRINTF_FD;
-	condition->line = (char*)malloc(sizeof(char) * 1);
+	condition->line = (char *)malloc(sizeof(char) * 1);
 	ft_memset(condition->line, 0, 1);
 	condition->line_len = 0;
 	return (SUCCESS);

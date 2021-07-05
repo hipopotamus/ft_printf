@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:30:40 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/05/10 17:38:00 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:48:20 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *nxt;
-	t_list *src;
+	t_list	*nxt;
+	t_list	*src;
 
 	if (!lst || !del || !*lst)
 		return ;

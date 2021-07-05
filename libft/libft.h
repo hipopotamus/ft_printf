@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:24:02 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 14:40:29 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 22:07:18 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define STDOUT 1
 # define STDERR 2
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -73,7 +73,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void*));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void*),
-					void (*del)(void*));
+						void (*del)(void*));
 
 int					ft_isinset(char ch, const char *set);
 char				*ft_uitoa(unsigned int n);
@@ -81,4 +81,5 @@ char				*ft_uitoa_base(unsigned int n, const char *base);
 char				*ft_ultoa_base(unsigned long n, const char *base);
 size_t				ft_sizet_max(size_t x, size_t y);
 size_t				ft_sizet_min(size_t x, size_t y);
+int					ft_tenary(int main, int true_value, int false_value);
 #endif

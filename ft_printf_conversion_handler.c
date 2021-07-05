@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:43:15 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 15:37:40 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:09:16 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	get_conversion_len(const char *format, char specifier)
 {
-	size_t len;
+	size_t	len;
 
 	len = 1;
 	while (format[len] != specifier)
@@ -41,7 +41,7 @@ void	*get_converter(char specifier)
 	return (NULL);
 }
 
-int		ft_printf_conversion_handler(
+int	ft_printf_conversion_handler(
 							t_printf_condition *condition, char *specifiers)
 {
 	char			specifier;
@@ -49,11 +49,13 @@ int		ft_printf_conversion_handler(
 	t_printf_res	result;
 	t_converter		converter;
 
-	if (!(specifier = ft_printf_get_specifier(condition->format, specifiers)))
+	specifier = ft_printf_get_specifier(condition->format, specifiers);
+	if (!specifier)
 		return (ERROR);
 	if (ft_printf_set_flag(&flag, condition, specifier) == ERROR)
 		return (ERROR);
-	if (!(converter = get_converter(specifier)))
+	converter = get_converter(specifier);
+	if (!converter)
 		return (ERROR);
 	if (converter(condition->ap, &flag, &result) == ERROR)
 		return (ERROR);
@@ -63,4 +65,3 @@ int		ft_printf_conversion_handler(
 	free(result.res);
 	return (result.res_len);
 }
-

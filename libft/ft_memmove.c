@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 18:34:51 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/05/08 21:29:41 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:53:23 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	while (len > 0)
 	{
 		len--;
-		((unsigned char*)dst)[len] = ((unsigned char*)src)[len];
+		((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
 	}
 	return (dst);
 }

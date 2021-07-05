@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:39:27 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 14:39:28 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:56:10 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 size_t	ft_sizet_max(size_t x, size_t y)
 {
-	return ((x > y) ? x : y);
+	if (x > y)
+		return (x);
+	else
+		return (y);
 }

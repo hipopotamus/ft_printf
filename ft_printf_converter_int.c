@@ -6,21 +6,21 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:44:12 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 15:52:04 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:19:31 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		adjust_flag(t_printf_flag *f)
+static void	adjust_flag(t_printf_flag *f)
 {
 	if (f->minus || f->precision_exist)
 		f->zero = 0;
 }
 
-static int		set_content(va_list ap, t_printf_flag *f, t_printf_content *pc)
+static int	set_content(va_list ap, t_printf_flag *f, t_printf_content *pc)
 {
-	long n;
+	long	n;
 
 	n = va_arg(ap, int);
 	if (n < 0)
@@ -33,7 +33,7 @@ static int		set_content(va_list ap, t_printf_flag *f, t_printf_content *pc)
 	if (f->precision_exist && f->precision == 0 && n == 0)
 		pc->content = ft_strdup("");
 	else
-		pc->content = ft_uitoa((n >= 0) ? n : n * -1);
+		pc->content = ft_uitoa(ft_tenary((n >= 0), n, n * -1));
 	if (pc->content == NULL)
 		return (ERROR);
 	pc->content_len = ft_strlen(pc->content);
@@ -41,12 +41,13 @@ static int		set_content(va_list ap, t_printf_flag *f, t_printf_content *pc)
 	return (SUCCESS);
 }
 
-static int		set_res(t_printf_flag *f, t_printf_res *r, t_printf_content *pc)
+static int	set_res(t_printf_flag *f, t_printf_res *r, t_printf_content *pc)
 {
-	size_t idx;
+	size_t	idx;
 
 	r->res_len = ft_sizet_max(f->width, pc->prefix_len + pc->must_content_len);
-	if (!(r->res = (char *)malloc(sizeof(char) * r->res_len)))
+	r->res = (char *)malloc(sizeof(char) * r->res_len);
+	if (!r->res)
 		return (ERROR);
 	if (f->zero)
 	{
@@ -57,7 +58,8 @@ static int		set_res(t_printf_flag *f, t_printf_res *r, t_printf_content *pc)
 	else
 	{
 		ft_memset(r->res, ' ', r->res_len);
-		idx = (f->minus) ? pc->prefix_len : r->res_len - pc->must_content_len;
+		idx = ft_tenary(f->minus, pc->prefix_len,
+				r->res_len - pc->must_content_len);
 		ft_memcpy(&r->res[idx - pc->prefix_len], pc->prefix, pc->prefix_len);
 		ft_memset(&r->res[idx], '0', pc->must_content_len);
 		idx = idx + pc->must_content_len - pc->content_len;
@@ -66,7 +68,7 @@ static int		set_res(t_printf_flag *f, t_printf_res *r, t_printf_content *pc)
 	return (SUCCESS);
 }
 
-int				ft_printf_converter_int(
+int	ft_printf_converter_int(
 								va_list ap, t_printf_flag *f, t_printf_res *r)
 {
 	t_printf_content	pc;

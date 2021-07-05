@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 16:05:29 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/05/10 15:47:58 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:54:20 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long nl;
+	long	nl;
 
 	nl = (long)n;
 	if (nl < 0)

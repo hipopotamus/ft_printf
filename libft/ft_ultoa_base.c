@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:39:17 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 14:39:20 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 22:06:25 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	get_n_len(unsigned long n, size_t base_len)
 {
-	int n_len;
+	int	n_len;
 
 	if (n == 0)
 		return (1);
@@ -27,7 +27,7 @@ static int	get_n_len(unsigned long n, size_t base_len)
 	return (n_len);
 }
 
-char		*ft_ultoa_base(unsigned long n, const char *base)
+char	*ft_ultoa_base(unsigned long n, const char *base)
 {
 	char	*res;
 	int		n_len;

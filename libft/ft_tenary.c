@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_tenary.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 16:05:29 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 21:54:39 by sungwopa         ###   ########.fr       */
+/*   Created: 2021/07/05 21:03:56 by sungwopa          #+#    #+#             */
+/*   Updated: 2021/07/05 22:08:59 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_tenary(int main, int true_value, int false_value)
 {
-	size_t	len;
-
-	len = ft_strlen(s);
-	write(fd, s, len);
+	if (main)
+		return (true_value);
+	else
+		return (false_value);
 }

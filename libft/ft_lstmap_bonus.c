@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/10 17:43:23 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/05/10 19:00:58 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 21:50:06 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 
 	if (!lst || !f || !del)
 		return (NULL);
-	if (!(first_new_lst = ft_lstnew(f(lst->content))))
+	first_new_lst = ft_lstnew(f(lst->content));
+	if (!first_new_lst)
 		return (NULL);
 	new_lst = first_new_lst;
 	while (lst->next != NULL)
 	{
 		lst = lst->next;
-		if (!(new_lst->next = ft_lstnew(f(lst->content))))
+		new_lst->next = ft_lstnew(f(lst->content));
+		if (!new_lst->next)
 		{
 			ft_lstclear(&first_new_lst, del);
 			return (NULL);
