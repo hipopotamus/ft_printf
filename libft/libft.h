@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:24:02 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/05/12 18:18:09 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 14:40:29 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # define STDIN 0
 # define STDOUT 1
 # define STDERR 2
-
 
 typedef struct		s_list
 {

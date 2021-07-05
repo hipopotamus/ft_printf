@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/05 14:38:28 by sungwopa          #+#    #+#             */
+/*   Updated: 2021/07/05 14:40:19 by sungwopa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t	get_n_len(unsigned int n)
@@ -21,7 +33,7 @@ char			*ft_uitoa(unsigned int n)
 	size_t	len;
 
 	len = get_n_len(n);
-	if (!(res = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(res = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	res[0] = '0';
 	res[len] = '\0';

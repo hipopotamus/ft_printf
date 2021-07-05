@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/05 14:42:59 by sungwopa          #+#    #+#             */
+/*   Updated: 2021/07/05 14:52:45 by sungwopa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -16,7 +28,6 @@ typedef struct	s_printf_condition
 	va_list		ap;
 	int			fd;
 	char		*line;
-	size_t		line_idx;
 	size_t		line_len;
 }				t_printf_condition;
 
@@ -71,6 +82,6 @@ int				ft_printf_converter_hex
 							(va_list ap, t_printf_flag *f, t_printf_res *r);
 int				ft_printf_converter_percent
 							(va_list ap, t_printf_flag *f, t_printf_res *r);
-int				ft_printf_getbuffer(t_printf_condition *condition, 
+int				ft_printf_getbuffer(t_printf_condition *condition,
 				const char *word, size_t word_len);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_conversion_handler.c                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kycho <kycho@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/10 21:29:27 by kycho             #+#    #+#             */
-/*   Updated: 2020/04/10 21:29:33 by kycho            ###   ########.fr       */
+/*   Created: 2021/07/05 14:43:15 by sungwopa          #+#    #+#             */
+/*   Updated: 2021/07/05 14:43:28 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int		ft_printf_conversion_handler(
 		return (ERROR);
 	if (converter(condition->ap, &flag, &result) == ERROR)
 		return (ERROR);
-	//write(condition->fd, result.res, result.res_len);
 	ft_printf_getbuffer(condition, result.res, result.res_len);
 	condition->format += get_conversion_len(condition->format, specifier);
 	free(result.res);

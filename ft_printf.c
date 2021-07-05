@@ -1,7 +1,18 @@
-#include "ft_printf.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/05 14:42:11 by sungwopa          #+#    #+#             */
+/*   Updated: 2021/07/05 15:07:32 by sungwopa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int init_ft_printf(const char **format, int *total_written,
+#include "ft_printf.h"
+
+int	init_ft_printf(const char **format, int *total_written,
 		t_printf_condition *condition, char **specifiers)
 {
 	if (*format == NULL)
@@ -12,7 +23,6 @@ int init_ft_printf(const char **format, int *total_written,
 	condition->fd = FT_PRINTF_FD;
 	condition->line = (char*)malloc(sizeof(char) * 1);
 	ft_memset(condition->line, 0, 1);
-	condition->line_idx = 0;
 	condition->line_len = 0;
 	return (SUCCESS);
 }
@@ -24,7 +34,7 @@ int	ft_printf(const char *format, ...)
 	char				*specifiers;
 	t_printf_condition	condition;
 
-	if(!(init_ft_printf(&format, &total_written, &condition, &specifiers)))
+	if (!(init_ft_printf(&format, &total_written, &condition, &specifiers)))
 		return (ERROR);
 	va_start(condition.ap, format);
 	while (*condition.format != '\0')
@@ -34,7 +44,6 @@ int	ft_printf(const char *format, ...)
 		else
 		{
 			written = ft_printf_putchar(&condition);
-			//write(1, condition., condition.line_len);
 		}
 		if (written == ERROR)
 			return (ERROR);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_converter_unsigned_int.c                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kycho <kycho@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/19 21:42:16 by kycho             #+#    #+#             */
-/*   Updated: 2020/04/10 21:06:14 by kycho            ###   ########.fr       */
+/*   Created: 2021/07/05 14:45:03 by sungwopa          #+#    #+#             */
+/*   Updated: 2021/07/05 14:45:03 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
