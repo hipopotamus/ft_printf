@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:48:33 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 14:48:35 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:42:44 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	init_flag(t_printf_flag *flag, char specifier)
 {
 	flag->specifier = specifier;
-	flag->space = 0;
 	flag->zero = 0;
 	flag->minus = 0;
 	flag->width = 0;
@@ -28,10 +27,8 @@ void	set_front_flag(t_printf_flag *f, t_printf_condition *c, size_t *idx)
 	const char *format;
 
 	format = c->format;
-	while (format[*idx] == ' ' || format[*idx] == '-' || format[*idx] == '0')
+	while (format[*idx] == '-' || format[*idx] == '0')
 	{
-		if (format[*idx] == ' ')
-			f->space = 1;
 		if (format[*idx] == '0')
 			f->zero = 1;
 		if (format[*idx] == '-')

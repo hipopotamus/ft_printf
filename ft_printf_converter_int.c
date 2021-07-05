@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:44:12 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 14:44:13 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:52:04 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ static int		set_content(va_list ap, t_printf_flag *f, t_printf_content *pc)
 	n = va_arg(ap, int);
 	if (n < 0)
 		pc->prefix = ft_strdup("-");
-	else if (f->space)
-		pc->prefix = ft_strdup(" ");
 	else
 		pc->prefix = ft_strdup("");
 	if (pc->prefix == NULL)

@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:42:59 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 14:52:45 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:42:26 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct	s_printf_condition
 typedef struct	s_printf_flag
 {
 	char		specifier;
-	int			space;
 	int			zero;
 	int			minus;
 	size_t		width;

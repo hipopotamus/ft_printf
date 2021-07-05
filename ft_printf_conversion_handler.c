@@ -6,7 +6,7 @@
 /*   By: sungwopa <sungwopa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:43:15 by sungwopa          #+#    #+#             */
-/*   Updated: 2021/07/05 14:43:28 by sungwopa         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:37:40 by sungwopa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,10 @@ int		ft_printf_conversion_handler(
 		return (ERROR);
 	if (converter(condition->ap, &flag, &result) == ERROR)
 		return (ERROR);
-	ft_printf_getbuffer(condition, result.res, result.res_len);
+	if (!(ft_printf_getbuffer(condition, result.res, result.res_len)))
+		return (ERROR);
 	condition->format += get_conversion_len(condition->format, specifier);
 	free(result.res);
 	return (result.res_len);
 }
+
